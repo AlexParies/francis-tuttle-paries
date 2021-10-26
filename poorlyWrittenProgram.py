@@ -5,16 +5,22 @@ import turtle as trtl
 trtls = trtl.Turtle()
 trtls.pensize(40)
 trtls.circle(20)
-w = 6
-y = 70
-z = 380 / w
+'^^^make body^^^'
+loop = 8
+theLegsLength = 70
+loopNum = 380 / loop
 trtls.pensize(5)
-n = 0
-while (n < w):
+legCount = 0 
+
+while (legCount < loop):
   trtls.goto(0,0)
-  trtls.setheading(z*n)
-  trtls.forward(y)
-  n = n + 1
+  trtls.setheading(loopNum*legCount) 
+  '^^^config legs^^^'
+  trtls.forward(theLegsLength)
+  'draw leg'
+  legCount = legCount + 1
+ 
+  print("leg length=", theLegsLength)
 trtls.hideturtle()
 wn = trtl.Screen()
-wn.etrtlsitonclick()
+wn.exitonclick()
