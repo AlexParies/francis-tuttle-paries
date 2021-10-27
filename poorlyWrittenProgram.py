@@ -7,32 +7,36 @@ trtls.pensize(40)
 trtls.circle(20)
 '^^^make body^^^'
 
-loop = 8
-theLegsLength = 70
-angle = 180 / loop
+
+#lets make some legs
+legs = 8
+legLenth = 70
+legDist = 240 / legs
 trtls.pensize(5)
-leg = 0 
 
+#draw the legs
+n = 0
+while (n< legs/2):
+    trtls.goto(0,20)
+    trtls.pendown()
+    trtls.setheading(legDist*n-45)
+    trtls.circle(-50, -80)
+    trtls.penup()
+    n = n + 1
+n = 0
 
-while (leg < loop - 4):
-  trtls.goto(0,20)
-  trtls.setheading(angle*leg - 45) 
-  '^^^config legs^^^'
-  trtls.forward(theLegsLength)
-  'draw leg^^^'
-  '''  trtls.setheading(angle*leg + 45)
-  trtls.forward(theLegsLength)'''
-  leg = leg + 1
-leg = 0
-while (leg < loop - 4):
- trtls.goto(0,20)   
- trtls.setheading(angle*leg + 160)
- trtls.forward(theLegsLength)
- leg = leg + 1
-"^^^make legs^^^"
-
+while (n< legs/2):
+  
+    trtls.goto(0,20)
+    trtls.pendown()
+    trtls.setheading(legDist*n-45+180)
+    trtls.circle(50, -80)
+    trtls.penup()
+    n = n + 1
+trtls.penup()
 trtls.pensize(5 )
 trtls.goto(10,40)
+trtls.pendown()
 trtls.pencolor("white")
 trtls.circle(1)
 trtls.penup()
@@ -45,6 +49,7 @@ trtls.circle(1)
 trtls.pencolor("black")
 "^^^eye two^^^"
 "^^^eyes^^^"
+
 
 trtls.hideturtle()
 wn = trtl.Screen()
